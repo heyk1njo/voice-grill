@@ -1,0 +1,25 @@
+{
+  "name": "horisage",
+  "owner": {
+    "name": "heyk1njo",
+    "url": "https://github.com/heyk1njo"
+  },
+  "description": "音声入力向けの掘り下げスキル horisage",
+  "plugins": [
+    {
+      "name": "horisage",
+      "source": "./",
+      "description": "音声入力で話しながら考えを掘り下げ、計画して実行まで進める。",
+      "version": "0.1.0",
+      "author": {
+        "name": "heyk1njo",
+        "url": "https://github.com/heyk1njo"
+      },
+      "homepage": "https://github.com/heyk1njo/horisage",
+      "repository": "https://github.com/heyk1njo/horisage",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["voice-input", "grilling", "interview", "planning", "writing"]
+    }
+  ]
+}

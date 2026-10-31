@@ -1,0 +1,28 @@
+{
+  "name": "horisage",
+  "version": "0.1.0",
+  "description": "音声入力で話しながら考えを掘り下げ、計画して実行（記事を書く・作る・決める）まで進める。",
+  "author": {
+    "name": "heyk1njo",
+    "url": "https://github.com/heyk1njo"
+  },
+  "homepage": "https://github.com/heyk1njo/horisage",
+  "repository": "https://github.com/heyk1njo/horisage",
+  "license": "MIT",
+  "keywords": ["voice-input", "aqua-voice", "grilling", "interview", "planning", "writing", "japanese"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Horisage",
+    "shortDescription": "話しながら掘り下げ、計画して実行する（音声入力向け）",
+    "longDescription": "Aqua Voice などの音声入力で長く話した内容を受け止め、番号つきの質問を最大 5 問ずつ重ねて考えを明確にします。まとめに合意したら、計画を立てて実行するか、取材メモだけを材料に記事を書きます。",
+    "developerName": "heyk1njo",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "websiteURL": "https://github.com/heyk1njo/horisage",
+    "defaultPrompt": [
+      "掘り下げて。いま考えていることを話すから整理して",
+      "聞き取って記事にして",
+      "続きから"
+    ]
+  }
+}
