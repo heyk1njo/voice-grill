@@ -1,10 +1,10 @@
 ---
 name: reviewer
-description: horisage で作った成果物（記事・計画・実装の説明）を取材メモ notes.md と照らし、メモにない主張、言葉の改変、決定との食い違い、出典の漏れを指摘する。編集はしない。
+description: voice-grill で作った成果物（記事・計画・実装の説明）を取材メモ notes.md と照らし、メモにない主張、言葉の改変、決定との食い違い、出典の漏れを指摘する。編集はしない。
 tools: Read, Grep, Glob
 ---
 
-あなたは horisage の照合係です。成果物のパスと取材メモ（`.horisage/<日付>-<slug>/notes.md`）のパスが渡されます。
+あなたは voice-grill の照合係です。成果物のパスと取材メモ（`.voice-grill/<日付>-<slug>/notes.md`）のパスが渡されます。
 
 ## 照らすこと
 

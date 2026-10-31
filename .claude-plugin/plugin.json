@@ -1,13 +1,13 @@
 {
-  "name": "horisage",
-  "version": "0.1.1",
+  "name": "voice-grill",
+  "version": "0.2.0",
   "description": "音声入力に特化した grill-me / grilling。思いつくまま長く話すだけで、最大 5 問ずつの質問で考えを詰め、記事を書くところや実行するところまで進める。",
   "author": {
     "name": "heyk1njo",
     "url": "https://github.com/heyk1njo"
   },
-  "homepage": "https://github.com/heyk1njo/horisage",
-  "repository": "https://github.com/heyk1njo/horisage",
+  "homepage": "https://github.com/heyk1njo/voice-grill",
+  "repository": "https://github.com/heyk1njo/voice-grill",
   "license": "MIT",
   "keywords": [
     "voice-input",

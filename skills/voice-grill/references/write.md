@@ -33,7 +33,7 @@
 ## 4. 確かめる
 
 - 取材メモと照らして読み直す: メモにない主張、言葉の改変、書かないことへの抵触、決まったこととの食い違い、出典の漏れ。
-- horisage の reviewer エージェント（Claude Code なら `horisage:reviewer`）があれば照合を頼む。指摘は正しさの問題だけを直す。
+- voice-grill の reviewer エージェント（Claude Code なら `voice-grill:reviewer`）があれば照合を頼む。指摘は正しさの問題だけを直す。
 - `[要確認]` が残っていれば、報告の最初に並べる。
 
 ## 5. 仕上げ

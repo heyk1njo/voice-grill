@@ -1,11 +1,11 @@
 {
-  "name": "horisage",
+  "name": "voice-grill",
   "interface": {
-    "displayName": "Horisage"
+    "displayName": "Voice Grill"
   },
   "plugins": [
     {
-      "name": "horisage",
+      "name": "voice-grill",
       "source": {
         "source": "local",
         "path": "./"

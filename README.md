@@ -1,12 +1,12 @@
-# horisage（掘り下げ）
+# voice-grill
 
 音声入力に特化した grill-me / grilling です。Aqua Voice などで思いつくまま長く話すだけで、質問を重ねて考えを詰め、そのまま記事を書くところや実行するところまで進めます。Claude Code と Codex の両方で動きます。
 
 ## grill-me / grilling との違い
 
-Matt Pocock さんの [grill-me / grilling](https://github.com/mattpocock/skills) は、質問を 1 問ずつ重ねて考えを詰めるスキルです。キーボードで短く答えるなら、このやり方が合っています。音声入力では一度に長く話せるので、1 問ずつだと往復が増えて疲れます。horisage は同じ考え方を、音声で答える前提で作り直しました。
+Matt Pocock さんの [grill-me / grilling](https://github.com/mattpocock/skills) は、質問を 1 問ずつ重ねて考えを詰めるスキルです。キーボードで短く答えるなら、このやり方が合っています。音声入力では一度に長く話せるので、1 問ずつだと往復が増えて疲れます。voice-grill は同じ考え方を、音声で答える前提で作り直しました。
 
-| | grill-me / grilling | horisage |
+| | grill-me / grilling | voice-grill |
 |---|---|---|
 | 1 回の質問 | 1 問 | 最大 5 問。番号つき |
 | 答え方 | 1 問ずつ答える | 番号なしで、まとめて話せばよい |
@@ -16,7 +16,7 @@ Matt Pocock さんの [grill-me / grilling](https://github.com/mattpocock/skills
 | 終わり | 考えが詰まったら終わる | 記事を書くか、計画を立てて実行する |
 | 再開 | なし | 「続きから」で戻れる |
 
-20 問かかる話なら、grill-me では 20 往復、horisage では 4〜5 往復で済みます。
+20 問かかる話なら、grill-me では 20 往復、voice-grill では 4〜5 往復で済みます。
 
 ## 音声向けの工夫
 
@@ -25,7 +25,7 @@ Matt Pocock さんの [grill-me / grilling](https://github.com/mattpocock/skills
 - **誘導しない**: 体験や気持ちを聞く問いに推奨を付けないので、記事が AI の言葉ではなく本人の言葉になります。
 - **画面を見なくてよい**: 表や長いコードを出さず、声で聞いても分かる短い文で返します。
 - **離席しても止まらない**: commit・push・公開などの判断と許可を計画の段階でまとめて取り、そのあとは最後まで進めます。
-- **メモは git に入らない**: 取材メモは `.horisage/` に置き、コミットされないようにします。
+- **メモは git に入らない**: 取材メモは `.voice-grill/` に置き、コミットされないようにします。
 
 ## 流れ
 
@@ -44,7 +44,7 @@ Matt Pocock さんの [grill-me / grilling](https://github.com/mattpocock/skills
 続きから
 ```
 
-Claude Code では `/horisage` でも始められます。
+Claude Code では `/voice-grill` でも始められます。
 
 答えるときのコツです。
 
@@ -57,8 +57,8 @@ Claude Code では `/horisage` でも始められます。
 ### Claude Code（リポジトリ単位）
 
 ```sh
-claude plugin marketplace add heyk1njo/horisage --scope project
-claude plugin install horisage@horisage -s project
+claude plugin marketplace add heyk1njo/voice-grill --scope project
+claude plugin install voice-grill@voice-grill -s project
 ```
 
 スキルに加えて、事実を調べる `researcher` と、成果物を取材メモと照らす `reviewer` の 2 つのエージェントが入ります。
@@ -66,8 +66,8 @@ claude plugin install horisage@horisage -s project
 ### Codex
 
 ```sh
-codex plugin marketplace add heyk1njo/horisage
-codex plugin add horisage@horisage
+codex plugin marketplace add heyk1njo/voice-grill
+codex plugin add voice-grill@voice-grill
 ```
 
 Codex のプラグインは `~/.codex` に入るので、すべてのリポジトリで使えるようになります。
@@ -75,15 +75,15 @@ Codex のプラグインは `~/.codex` に入るので、すべてのリポジ�
 ### スキルだけをリポジトリに入れる
 
 ```sh
-npx skills add heyk1njo/horisage -a claude-code -a codex
+npx skills add heyk1njo/voice-grill -a claude-code -a codex
 ```
 
-この方法ではエージェントは入りません。horisage は、エージェントがなければ自分で調べて照合します。
+この方法ではエージェントは入りません。voice-grill は、エージェントがなければ自分で調べて照合します。
 
 ## ファイル
 
 ```
-skills/horisage/
+skills/voice-grill/
   SKILL.md                    掘り下げの本体
   references/notes-template.md 取材メモの形
   references/plan.md          計画と合意
