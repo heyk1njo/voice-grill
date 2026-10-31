@@ -1,0 +1,3 @@
+interface:
+  display_name: "Horisage"
+  short_description: "話しながら掘り下げ、計画して実行する（音声入力向け）"
