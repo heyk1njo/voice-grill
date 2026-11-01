@@ -1,67 +1,68 @@
 # voice-grill
 
-音声入力に特化した grill-me / grilling です。Aqua Voice などで思いつくまま長く話すだけで、質問を重ねて考えを詰め、そのまま記事を書くところや実行するところまで進めます。Claude Code と Codex の両方で動きます。
+A voice-first interviewer in the spirit of grill-me / grilling. Talk freely through voice input such as Aqua Voice, and it interviews you with rounds of questions to draw out and sharpen your thinking, then carries on to write the article or plan and execute the work. Works with both Claude Code and Codex.
 
-## grill-me / grilling との違い
+## How it differs from grill-me / grilling
 
-Matt Pocock さんの [grill-me / grilling](https://github.com/mattpocock/skills) は、質問を 1 問ずつ重ねて考えを詰めるスキルです。キーボードで短く答えるなら、このやり方が合っています。音声入力では一度に長く話せるので、1 問ずつだと往復が増えて疲れます。voice-grill は同じ考え方を、音声で答える前提で作り直しました。
+Matt Pocock's [grill-me / grilling](https://github.com/mattpocock/skills) sharpens your thinking by asking one question at a time. That works well when you type short answers. With voice input you can say a lot at once, so one question per turn means many round trips and gets tiring. voice-grill keeps the same idea but rebuilds it as an interview you answer by talking: it draws you out, lets you talk at length, and takes notes.
 
 | | grill-me / grilling | voice-grill |
 |---|---|---|
-| 1 回の質問 | 1 問 | 最大 5 問。番号つき |
-| 答え方 | 1 問ずつ答える | 番号なしで、まとめて話せばよい |
-| 推奨の答え | すべての問いに付ける | 決めごとだけに付ける。体験や気持ちの問いには付けない |
-| 話し言葉 | 想定していない | 言い直し・先回りの答え・脱線を仕分け、誤変換を直す |
-| 記録 | grill-me は残さない。grill-with-docs は用語集と ADR に残す | 取材メモに、本人の発言・AI の解釈・調べた事実を分けて残す |
-| 終わり | 考えが詰まったら終わる | 記事を書くか、計画を立てて実行する |
-| 再開 | なし | 「続きから」で戻れる |
+| Questions per turn | 1 | Up to 5, numbered |
+| How you answer | One question at a time | Talk through everything at once, no numbers needed |
+| Recommended answers | On every question | Only on decisions. Never on experiences or feelings |
+| Spoken language | Not considered | Sorts self-corrections, early answers, and tangents; fixes transcription errors |
+| Record | grill-me keeps none. grill-with-docs writes a glossary and ADRs | Interview notes that keep your words, the AI's interpretations, and verified facts apart |
+| Ending | Ends when the thinking is sharp | Writes the article, or plans and executes |
+| Resuming | No | "Continue" picks up where you left off |
 
-20 問かかる話なら、grill-me では 20 往復、voice-grill では 4〜5 往復で済みます。
+A topic that takes 20 questions means 20 round trips with grill-me, and 4–5 with voice-grill.
 
-## 音声向けの工夫
+## Built for voice
 
-- **言い直しに強い**: 「いや、違くて」「やっぱり」のあとの答えを採ります。
-- **誤変換を直す**: 文脈で明らかなものは黙って直し、固有名詞と数字だけ 1 回確かめます。何度も誤変換された語は、最後に音声入力の辞書に足す候補として挙げます。
-- **誘導しない**: 体験や気持ちを聞く問いに推奨を付けないので、記事が AI の言葉ではなく本人の言葉になります。
-- **画面を見なくてよい**: 表や長いコードを出さず、声で聞いても分かる短い文で返します。
-- **離席しても止まらない**: commit・push・公開などの判断と許可を計画の段階でまとめて取り、そのあとは最後まで進めます。
-- **メモは git に入らない**: 取材メモは `.voice-grill/` に置き、コミットされないようにします。
+- **Handles self-corrections**: after "no, wait" or "actually", it takes the later answer.
+- **Fixes transcription errors**: obvious ones are fixed silently; only proper nouns and numbers are checked, once. Words mis-transcribed repeatedly are suggested for your voice input dictionary at the end.
+- **Doesn't lead you**: questions about experiences and feelings carry no recommended answer, so the article ends up in your words, not the AI's.
+- **No need to look at the screen**: no tables or long code in replies, just short sentences that make sense when heard aloud.
+- **Keeps going when you step away**: permissions for commit, push, publishing, and other decisions are gathered up front in the plan, then it runs to the end.
+- **Replies in your language**: the prompts are written in English, but it interviews you in whatever language you speak, and writes the notes and the deliverable in that language too.
+- **Notes stay out of git**: interview notes live in `.voice-grill/` and are kept from being committed.
 
-## 流れ
+## Flow
 
-1. **掘り下げ**: 質問のラリーで、目的・相手・主張・範囲・根拠・制約を決めていきます。
-2. **まとめ**: 取材メモの要点を見せ、理解が合っているかを 1 回だけ確かめます。
-3. **計画と実行**: 記事なら構成を見出しで見せてから書きます。それ以外なら `plan.md` を作り、合意した範囲で最後まで進めて報告します。
+1. **Interview**: rounds of questions settle the goal, audience, claim, scope, evidence, and constraints.
+2. **Summary**: it shows the key points of the interview notes and checks once that it understood you.
+3. **Plan and execute**: for an article, it shows the outline as headings, then writes. Otherwise it writes `plan.md`, carries it through within the agreed scope, and reports back.
 
-## 使い方
+## Usage
 
-次のように話しかけます。
+Just start talking:
 
 ```
-掘り下げて。いま考えているのは……（思いつくまま長く話す）
-聞き取って記事にして
-壁打ちして / ドリルダウンして / 話すから整理して
-続きから
+Interview me. Here's what I'm thinking about... (talk as long as you like)
+Interview me and turn it into a blog post
+Grill me / drill down / let me think out loud
+Continue
 ```
 
-Claude Code では `/voice-grill` でも始められます。
+In Claude Code you can also start with `/voice-grill`. Japanese triggers such as 「掘り下げて」 and 「聞き取って記事にして」 work too.
 
-答えるときのコツです。
+Tips for answering:
 
-- 番号を言わなくても大丈夫です。思いついた順に、まとめて話してください。
-- 「全部はい」「2 以外はい」「3 番はパス」で推奨を受け入れたり飛ばしたりできます。
-- 「まとめて」「書いて」と言えば、いつでも掘り下げを切り上げられます。
+- No need to say question numbers. Talk through everything in whatever order it comes to mind.
+- Say "yes to all", "yes except 2", or "skip 3" to accept or skip recommendations.
+- Say "wrap up" or "write it" to end the interview at any time.
 
-## 入れ方
+## Install
 
-### Claude Code（リポジトリ単位）
+### Claude Code (per repository)
 
 ```sh
 claude plugin marketplace add heyk1njo/voice-grill --scope project
 claude plugin install voice-grill@voice-grill -s project
 ```
 
-スキルに加えて、事実を調べる `researcher` と、成果物を取材メモと照らす `reviewer` の 2 つのエージェントが入ります。
+Along with the skill, this installs two agents: `researcher`, which looks up facts, and `reviewer`, which checks deliverables against the interview notes.
 
 ### Codex
 
@@ -70,34 +71,34 @@ codex plugin marketplace add heyk1njo/voice-grill
 codex plugin add voice-grill@voice-grill
 ```
 
-Codex のプラグインは `~/.codex` に入るので、すべてのリポジトリで使えるようになります。
+Codex plugins are installed into `~/.codex`, so they apply to every repository.
 
-### スキルだけをリポジトリに入れる
+### Skill only, per repository
 
 ```sh
 npx skills add heyk1njo/voice-grill -a claude-code -a codex
 ```
 
-この方法ではエージェントは入りません。voice-grill は、エージェントがなければ自分で調べて照合します。
+This installs the skill without the agents. Without them, voice-grill does the research and the checking itself.
 
-## ファイル
+## Files
 
 ```
 skills/voice-grill/
-  SKILL.md                    掘り下げの本体
-  references/notes-template.md 取材メモの形
-  references/plan.md          計画と合意
-  references/run.md           実行と報告
-  references/write.md         記事を書く
+  SKILL.md                     the interview
+  references/notes-template.md interview notes format
+  references/plan.md           planning and agreement
+  references/run.md            execution and report
+  references/write.md          writing articles
 agents/
-  researcher.md               事実を調べる（Claude Code）
-  reviewer.md                 取材メモと照らす（Claude Code）
+  researcher.md                looks up facts (Claude Code)
+  reviewer.md                  checks against the notes (Claude Code)
 ```
 
-## クレジット
+## Credits
 
-質問を重ねて設計を詰めるやり方は、Matt Pocock さんの [mattpocock/skills](https://github.com/mattpocock/skills)（MIT License）の grill-me と grilling を参考にしました。
+The approach of sharpening a design through relentless questions comes from grill-me and grilling in Matt Pocock's [mattpocock/skills](https://github.com/mattpocock/skills) (MIT License).
 
-## ライセンス
+## License
 
 [MIT](LICENSE)

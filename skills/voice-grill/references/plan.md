@@ -1,54 +1,54 @@
-# 計画（plan）
+# Plan
 
-まとめに合意したあと、記事以外のもの（実装・調査・段取り・決定）を作るときに使う。目的は、相手が離席しても最後まで進められる計画を作り、判断と許可を先にまとめて取ること。
+Use this after the summary is agreed, when producing something other than an article (an implementation, research, a sequence of steps, a decision). The goal is a plan that can be carried through to the end even if the user steps away, with all judgment calls and permissions gathered up front.
 
-## 計画を書く
+## Write the plan
 
-取材メモと同じフォルダに `plan.md` を書く。
+Write `plan.md` in the same folder as the notes.
 
 ```markdown
-# 計画: <主題>
+# Plan: <topic>
 
-## 目的
-<何のために、誰のために>（Q1, Q4）
+## Goal
+<What it is for, and for whom> (Q1, Q4)
 
-## 完了条件
-- <終わったと言える状態。確かめられる形で>
+## Done when
+- <A state that counts as finished, in a form that can be checked>
 
-## 確かめ方
-- <テスト・lint・実際に動かす・読み比べる など>
+## How to verify
+- <tests, lint, running it for real, reading side by side, …>
 
-## 手順
-- [ ] 1. <手順>（終わりの印: <何ができたら終わりか>）
+## Steps
+- [ ] 1. <step> (done when: <what marks it finished>)
 - [ ] 2. …
 
-## 許可が要る操作
-- commit: する / しない（する場合の単位）
-- push・公開・送信: する / しない
-- 削除・上書き: <対象と範囲>
-- お金がかかる操作・本番への反映: する / しない
+## Operations that need permission
+- commit: yes / no (and in what units)
+- push, publish, send: yes / no
+- delete, overwrite: <target and extent>
+- operations that cost money, deploying to production: yes / no
 
-## 前提・仮定
-- <決めずに進める点と、置いた仮定>
+## Assumptions
+- <What goes ahead undecided, and the assumption made>
 
-## やらないこと
-- <範囲の外>
+## Out of scope
+- <What is left out>
 ```
 
-- 手順は、1 つずつ終わったと判定できる大きさに切る。
-- 調べれば分かることは計画の前に調べ、手順に推測を残さない。
-- リポジトリの決まり（AGENTS.md・CLAUDE.md・README・既存のスキル）があれば読み、計画に反映する。
+- Cut steps small enough that each one can be judged finished on its own.
+- Look up what can be looked up before planning. Leave no guesses in the steps.
+- If the repository has its own rules (AGENTS.md, CLAUDE.md, README, existing skills), read them and reflect them in the plan.
 
-## 合意を取る
+## Get agreement
 
-計画の要点（目的・完了条件・手順の見出し）を 5〜7 行で見せ、合意ラウンドを 1 回だけ開く。
+Show the key points of the plan (goal, done-when, step headings) in 5–7 lines, and open a single agreement round.
 
-- 問いは最大 5 問。掘り下げと同じ形（番号・推奨つき）で、実行の途中で止まりそうな判断と許可をここで先に聞く。
-  - 例: 「**Q21** commit はしてよいですか。してよいなら論理単位に分けます → 推奨: commit まで。push はしない」
-- 「はい」「全部はい」で計画全体と推奨を受け入れられるようにする。
-- 合意したら取材メモの状態を「計画合意済み」にし、[run.md](run.md) に進む。
+- Up to 5 questions, in the same format as the interview (numbered, with recommendations). Ask here, up front, about every judgment call and permission that could otherwise stop execution midway.
+  - e.g. "**Q21** May I commit? If so, I'll split commits into logical units → Recommended: commit, but don't push"
+- Phrase it so that "yes" or "yes to all" accepts the whole plan and the recommendations.
+- Once agreed, set the notes' status to "plan agreed" and move on to [run.md](run.md).
 
-## 計画を変えるとき
+## Changing the plan
 
-- 実行の途中で計画が合わなくなったら、`plan.md` を直し、変えた理由を 1 行残す。
-- 完了条件・やらないこと・許可の範囲を広げる変更は、相手に確かめるまで実行しない。
+- If the plan stops fitting during execution, update `plan.md` and leave one line on why.
+- Don't act on a change that widens done-when, out of scope, or the permissions until the user confirms it.

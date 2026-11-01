@@ -1,57 +1,59 @@
-# 取材メモの形
+# Interview notes template
 
-`.voice-grill/<YYYY-MM-DD>-<slug>/notes.md` に置く。`<slug>` は主題を短い英小文字とハイフンにしたもの。
+Save as `.voice-grill/<YYYY-MM-DD>-<slug>/notes.md`. `<slug>` is the topic in a few lowercase English words joined by hyphens.
 
-上半分（ひとこと〜未決）が、掘り下げの終わりに見せる「まとめ」になる。毎ラウンド書き換えて、いつでもそのまま見せられる状態にしておく。下半分は材料の置き場。
+The top half (One line through Open questions) is the summary you show at the end of the interview. Rewrite it every round so it can be shown as is at any time. The bottom half is where the raw material goes.
+
+Write the notes in the user's language, including the section headings and status values. Keep the sections in this order so the reviewer and later sessions can find them.
 
 ```markdown
-# <主題>
+# <Topic>
 
-- 開始: YYYY-MM-DD
-- 作るもの: <記事 / 計画 / 決定 / 実装 …>
-- 状態: 掘り下げ中 / まとめ合意済み / 計画合意済み / 実行中 / 完了
+- Started: YYYY-MM-DD
+- Producing: <article / plan / decision / implementation …>
+- Status: interviewing / summary agreed / plan agreed / running / done
 
-## ひとこと
-<いまの結論を 1〜2 文で>
+## One line
+<The current conclusion in 1–2 sentences>
 
-## 決まったこと
-- <決定>（Q3, Q7）
+## Decided
+- <decision> (Q3, Q7)
 
-## 前提・仮定
-- <AI の解釈や仮定。本人が確かめたら「決まったこと」へ移す>（AI）
+## Assumptions
+- <Your interpretations and assumptions. Move to "Decided" once the user confirms> (AI)
 
-## やらない・書かないこと
-- <範囲の外に置くもの、書かない話題>（Q9）
+## Out of scope
+- <What is left out, topics not to write about> (Q9)
 
-## 未決
-- <まだ決まっていない問い>（前提: <何が決まれば聞けるか>）
+## Open questions
+- <question not yet decided> (needs: <what must be decided before it can be asked>)
 
 ---
 
-## 本人の言い回し（原文のまま）
-- 「…」（Q0）
+## In their own words (verbatim)
+- "…" (Q0)
 
-## 経緯・具体例
-- YYYY-MM: <出来事>（Q5）
+## History and examples
+- YYYY-MM: <event> (Q5)
 
-## 確かめた事実
-- <事実>（出典: <URL か ファイル:行>、確認日 YYYY-MM-DD）
+## Verified facts
+- <fact> (source: <URL or file:line>, checked YYYY-MM-DD)
 
-## 保留（脱線）
-- <あとで拾うかもしれない話>（Q4）
+## Parked (tangents)
+- <topic that may be picked up later> (Q4)
 
-## 用語表（誤変換 → 正しい語）
-- グリルミー → grill-me（Q1 で確認）
-- 会話パン → ?（未確認）
+## Glossary (mis-transcription → correct word)
+- grill knee → grill-me (confirmed in Q1)
+- conversation pan → ? (unconfirmed)
 
-## やりとり
+## Log
 ### R1
-- Q1 <問い> → <答えの要約>
-- Q2 <問い> → <答えの要約>
+- Q1 <question> → <summary of the answer>
+- Q2 <question> → <summary of the answer>
 ```
 
-## 書き方
+## How to write it
 
-- 出所を必ず残す: 本人の発言は Q 番号（最初の発話は Q0）、AI の解釈は「（AI）」、調べた事実は出典と確認日。
-- 「本人の言い回し」は誤変換だけ直し、語や語順は変えない。記事にするときの材料になる。
-- 答えが変わったら、古い答えを消して新しい答えを書く。変わった経緯が大事なら「経緯・具体例」に残す。
+- Always keep the source: the Q number for the user's words (the first message is Q0), "(AI)" for your interpretations, and the source and check date for verified facts.
+- In "In their own words", fix only transcription errors. Don't change words or word order. This is material for the article.
+- When an answer changes, delete the old answer and write the new one. If how it changed matters, record that under "History and examples".

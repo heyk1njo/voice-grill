@@ -1,7 +1,7 @@
 {
   "name": "voice-grill",
-  "version": "0.2.0",
-  "description": "音声入力に特化した grill-me / grilling。思いつくまま長く話すだけで、最大 5 問ずつの質問で考えを詰め、記事を書くところや実行するところまで進める。",
+  "version": "0.3.0",
+  "description": "A voice-first interviewer in the spirit of grill-me / grilling. Just talk through voice input (Aqua Voice and similar); it asks up to 5 numbered questions per round to draw out and sharpen your thinking, then writes the article or plans and executes the work. Replies in your language.",
   "author": {
     "name": "heyk1njo",
     "url": "https://github.com/heyk1njo"
@@ -16,7 +16,6 @@
     "grilling",
     "interview",
     "planning",
-    "writing",
-    "japanese"
+    "writing"
   ]
 }

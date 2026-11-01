@@ -1,29 +1,29 @@
-# 実行（run）
+# Run
 
-合意した `plan.md` の範囲で、止まらずに最後まで進める。相手は離席していることがある。
+Carry the agreed `plan.md` through to the end without stopping. The user may have stepped away.
 
-## 進め方
+## How to proceed
 
-- 手順を上から進め、終わるたびに `plan.md` のチェックを付ける。取材メモの状態を「実行中」にする。
-- 迷ったら、取材メモの決まったことと前提に照らして仮定を置き、`plan.md` の「前提・仮定」に書いて進む。聞くために止まらない。
-- 取り消せない操作（push・公開・送信・削除・上書き・お金がかかる操作・本番への反映）は、計画で許可された範囲だけ行う。許可されていないものは最後にまとめて聞く。
-- 失敗したら原因を調べて直す。2 回直しても同じところで失敗するなら、その手順を飛ばして記録し、ほかの手順を先に終える。
-- 範囲の外の気づきは「あとで」の一覧に積み、計画には入れない。
+- Work through the steps from the top and check each one off in `plan.md` as it finishes. Set the notes' status to "running" (in the notes' language).
+- When unsure, make an assumption based on what the notes say is decided and assumed, record it under "Assumptions" in `plan.md`, and keep going. Don't stop to ask.
+- Perform irreversible operations (push, publish, send, delete, overwrite, anything that costs money, deploying to production) only within what the plan permits. Collect anything not permitted and ask about it at the end.
+- When something fails, find the cause and fix it. If it fails at the same point after two fixes, skip that step, record it, and finish the other steps first.
+- Put out-of-scope ideas on a "later" list. Don't add them to the plan.
 
-## 確かめる
+## Verify
 
-- 完了条件を 1 つずつ、計画の「確かめ方」で確かめる。確かめられなかったものは、そう書く。
-- 文章や設計など、取材メモとの食い違いが問題になる成果物は、voice-grill の reviewer エージェント（Claude Code なら `voice-grill:reviewer`）があれば照合を頼む。なければ自分で取材メモと読み比べる。
+- Check each done-when item using the plan's "How to verify". Say so for anything you couldn't verify.
+- For writing, designs, and other deliverables where drifting from the notes matters, ask the voice-grill reviewer agent to check them if available (`voice-grill:reviewer` in Claude Code). Otherwise compare them against the notes yourself.
 
-## 報告
+## Report
 
-最後に、次の順で短く報告する。表や長いコードは避け、声で聞いても分かる文にする。
+At the end, report briefly in this order. Avoid tables and long code; use sentences that make sense when heard aloud.
 
-1. 結論（完了したか、何ができたか）
-2. やったこと
-3. 確かめたこと（確かめられなかったことも）
-4. 置いた仮定
-5. 残り（許可待ちの操作、飛ばした手順、「あとで」の一覧）
-6. 音声入力の辞書に足すとよさそうな語（あれば）
+1. Outcome (finished or not, and what was produced)
+2. What was done
+3. What was verified (and what couldn't be)
+4. Assumptions made
+5. What remains (operations awaiting permission, skipped steps, the "later" list)
+6. Words worth adding to the voice input dictionary (if any)
 
-報告したら取材メモの状態を「完了」にする。
+After reporting, set the notes' status to "done".

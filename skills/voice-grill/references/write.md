@@ -1,42 +1,42 @@
-# 書く（write）
+# Write
 
-まとめに合意したあと、記事・ブログ・ドキュメントなどの文章を書くときに使う。材料は取材メモだけ。AI が話を足さない。
+Write in the user's language unless they asked for another. Use this after the summary is agreed, when writing an article, blog post, document, or other prose. The only material is the notes. Don't add anything of your own.
 
-## 1. 書く前に決める
+## 1. Decide before writing
 
-取材メモで決まっていないものだけ、合意ラウンド（最大 5 問、推奨つき）で聞く。
+Ask in an agreement round (up to 5 questions, with recommendations) only about what the notes haven't settled:
 
-- 媒体と置き場所（ブログ・社内ドキュメント・SNS など）
-- 読者
-- 長さ
-- 文体（です・ます／だ・である、一人称）
-- 書かないこと
-- 公開・commit・push をどこまでしてよいか
+- Medium and destination (blog, internal docs, social media, …)
+- Reader
+- Length
+- Tone and voice (formal or casual, first person)
+- What not to write about
+- How far you may go with publishing, committing, and pushing
 
-作業しているリポジトリに記事用のスキルや決まり（例: blog-post スキル、AGENTS.md の文章ルール）があれば、それを読んで従う。その場合、決めることが重なる部分はそちらの手順を優先し、聞き取りは取材メモで済んだものを繰り返さない。
+If the repository you're working in has its own skill or rules for articles (e.g. a blog-post skill, writing rules in AGENTS.md), read and follow them. Where they overlap with these decisions, their procedure takes precedence, and don't re-ask anything the notes already cover.
 
-## 2. 構成を見せる
+## 2. Show the outline
 
-- 見出しを 5〜7 行で見せる。各見出しに材料の Q 番号を付ける（例: 「なぜ音声入力にしたか（Q2, Q5）」）。
-- 材料のない見出しは、追加で聞くか削る。AI が中身を補わない。
-- 「はい」で進める聞き方にする。
+- Show the headings in 5–7 lines. Tag each heading with the Q numbers of its material (e.g. "Why I switched to voice input (Q2, Q5)").
+- For a heading with no material, ask a follow-up or drop it. Don't fill it in yourself.
+- Phrase it so that "yes" moves things forward.
 
-## 3. 書く
+## 3. Write
 
-- 取材メモの決まったこと・経緯と具体例・確かめた事実から書く。
-- 本人の言い回しを 2〜3 か所、そのまま使う。本人の声が残っている文章にする。
-- カギかっこでの直接引用は、本人が確かめた言い回しだけ。言い直しや誤変換をそのまま引用しない。
-- 事実には出典を付ける（リンクか参照先）。確かめていないことは書かないか、`[要確認]` を付ける。
-- メモにない主張・数字・エピソードを足さない。足したくなったら `[要確認]` にして報告で聞く。
-- 1 文に 1 つのこと。誇張や決まり文句（「〜と言っても過言ではない」など）を避ける。
+- Write from what the notes record as decided, history and examples, and verified facts.
+- Use 2–3 of the user's own phrases verbatim, so the piece keeps their voice.
+- Quote directly only phrasing the user has confirmed. Never quote self-corrections or transcription errors as is.
+- Give every fact a source (a link or reference). Leave out anything unverified, or mark it `[needs check]`.
+- Don't add claims, numbers, or stories that aren't in the notes. If you want to, mark them `[needs check]` and ask in the report.
+- One idea per sentence. Avoid exaggeration and stock phrases ("it's no exaggeration to say…").
 
-## 4. 確かめる
+## 4. Check
 
-- 取材メモと照らして読み直す: メモにない主張、言葉の改変、書かないことへの抵触、決まったこととの食い違い、出典の漏れ。
-- voice-grill の reviewer エージェント（Claude Code なら `voice-grill:reviewer`）があれば照合を頼む。指摘は正しさの問題だけを直す。
-- `[要確認]` が残っていれば、報告の最初に並べる。
+- Re-read against the notes: claims not in the notes, altered wording, topics marked out of scope, contradictions with decisions, missing sources.
+- Ask the voice-grill reviewer agent to check it if available (`voice-grill:reviewer` in Claude Code). Fix only correctness issues it raises.
+- If any `[needs check]` marks remain, list them first in the report.
 
-## 5. 仕上げ
+## 5. Finish
 
-- 公開・commit・push は、1 で許可された範囲だけ行う。許可がなければファイルに書いた状態で止め、置き場所を伝える。
-- 報告は [run.md](run.md) の「報告」の形にする。
+- Publish, commit, or push only as far as permitted in step 1. Without permission, stop with the file written and say where it is.
+- Use the report format from "Report" in [run.md](run.md).
